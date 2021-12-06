@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-12-06T11:18:24.740Z",
+    "end": "2021-12-06T11:18:41.601Z",
+    "duration": 16861,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9091d6ce-b476-4744-b701-20d254bfa6d2",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0445e9a2-1e30-47d6-a981-59edeffe69fd",
+          "title": "add todo tests",
+          "fullFile": "/Users/tsukuyomi/Projects/seleniumDemo/test/first.test.js",
+          "file": "/test/first.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully adds a todo to application",
+              "fullTitle": "add todo tests successfully adds a todo to application",
+              "timedOut": null,
+              "duration": 11846,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = await new Builder().forBrowser('firefox').build();\nawait driver.get('https://lambdatest.github.io/sample-todo-app/');\nawait driver.findElement(By.id('sampletodotext')).sendKeys('Learn Selenium', Key.RETURN);\nlet todoText = await driver\n  .findElement(By.xpath('//li[last()]'))\n  .getText()\n  .then(value => {\n    return value;\n  });\ntodoText.should.equal('Learn Selenium');\nawait driver.quit();",
+              "err": {},
+              "uuid": "41927aa7-a303-4c8c-95a3-43c652ac070d",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "41927aa7-a303-4c8c-95a3-43c652ac070d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11846,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "d8fe25d7-fe3c-4475-9092-fe5f4f49caf3",
+          "title": "add another todo tests",
+          "fullFile": "/Users/tsukuyomi/Projects/seleniumDemo/test/second.test.js",
+          "file": "/test/second.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully adds another todo to application",
+              "fullTitle": "add another todo tests successfully adds another todo to application",
+              "timedOut": null,
+              "duration": 11314,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = await new Builder().forBrowser('firefox').build();\nawait driver.get('https://lambdatest.github.io/sample-todo-app/');\nawait driver.findElement(By.id('sampletodotext')).sendKeys('drink lots of coffee', Key.RETURN);\nlet todoText = await driver\n  .findElement(By.xpath('//li[last()]'))\n  .getText()\n  .then(value => {\n    return value;\n  });\ntodoText.should.equal('drink lots of coffee');\nawait driver.quit();",
+              "err": {},
+              "uuid": "dd564b7b-4618-47c8-a986-9565af38deb3",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "adding any new test for reporting fail",
+              "fullTitle": "add another todo tests adding any new test for reporting fail",
+              "timedOut": null,
+              "duration": 4550,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "let driver = await new Builder().forBrowser('firefox').build();\nawait driver.get('https://lambdatest.github.io/sample-todo-app/');\nawait driver.findElement(By.id('sampletodotext')).sendKeys('drink lots of coffee', Key.RETURN);\nlet todoText = await driver\n  .findElement(By.xpath('//li[last()]'))\n  .getText()\n  .then(value => {\n    return value;\n  });\ntodoText.should.equal('drink lots of tea');\nawait driver.quit();",
+              "err": {
+                "message": "AssertionError: expected 'drink lots of coffee' to equal 'drink lots of tea'",
+                "estack": "AssertionError: expected 'drink lots of coffee' to equal 'drink lots of tea'\n    at Context.<anonymous> (test/second.test.js:39:21)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
+                "diff": "- drink lots of coffee\n+ drink lots of tea\n"
+              },
+              "uuid": "e84a507e-8baf-4cc6-b59a-175a2171db49",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dd564b7b-4618-47c8-a986-9565af38deb3"
+          ],
+          "failures": [
+            "e84a507e-8baf-4cc6-b59a-175a2171db49"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 15864,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.0.1"
+    }
+  }
+}
